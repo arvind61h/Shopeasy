@@ -13,6 +13,7 @@ pipeline{
         stage('Test-And-DockerImage'){
             steps{
                 sh 'mvn clean install'
+                sh 'docker ps'
                 sh 'docker image prune -f'
                 sh 'docker container prune -f'
                 sh 'docker volume prune -f'
