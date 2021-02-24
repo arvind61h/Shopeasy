@@ -1,10 +1,7 @@
 pipeline{
-    agent {label 'devServer'}
+    agent {label 'productionServer'}
     stages{
-        stage('Deploying-Application-On-Dev-Environment'){
-            input {
-                message 'Please Click on Yes to Deploy on Dev Environment if not CLick on abort'
-            }
+        stage('Deploying-Application-On-Prod-Environment'){
             steps{
                 sh 'docker-compose down'
                 sh 'docker image prune -f'
@@ -12,7 +9,6 @@ pipeline{
                 sh 'docker volume prune -f'
                 sh 'docker network prune -f'
                 sh 'docker system prune -f'
-                sh 'docker rmi 92840/shop:dev1'
                 sh 'docker-compose up -d'
             }
         }

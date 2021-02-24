@@ -18,7 +18,7 @@ pipeline{
                 sh 'docker container prune -f'
                 sh 'docker volume prune -f'
                 sh 'docker system prune -f'
-                sh 'docker build -t 92840/shop:dev .'
+                sh 'docker build -t 92840/shop:prod .'
             }
             post{
                 success{
@@ -42,7 +42,7 @@ pipeline{
         stage('Deploying-Artifcts-Nexus'){
             steps{
               sh 'mvn deploy'
-              sh 'docker push 92840/shop:dev'
+              sh 'docker push 92840/shop:prod'
             }
         }
     }
