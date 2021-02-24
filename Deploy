@@ -1,5 +1,5 @@
 pipeline{
-    agent {label 'deploymentServer'}
+    agent {label 'devServer'}
     stages{
         stage('Deploying-Application-On-Dev-Environment'){
             input {
