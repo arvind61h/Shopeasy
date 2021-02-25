@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('SCM-CHeckout'){
             steps{
-               git 'https://github.com/arvind61h/Shopeasy.git' 
+               sh 'git fetch https://github.com/arvind61h/Shopeasy.git main'
             }
         }
         stage('Test-And-DockerImage'){
