@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   shop:
-    image: 92840/shop:prod
+    image: 92840/shop:dev
     networks:
     - shop
     ports:
