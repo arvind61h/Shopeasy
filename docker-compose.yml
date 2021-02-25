@@ -7,21 +7,22 @@ services:
     ports:
     - 8080:8080
     environment:
-    - url=jdbc:h2:tcp:H2
-    - username=adam
-    - password=adam123
+    - DB.URL=jdbc:h2:tcp://htwo/~/ecommerce
+    - DB.USER=adam
+    - DB.PASSWORD=adam123
     hostname:
-     H2
+     htwo
     depends_on:
-    - H2
-  H2:
+    - htwo
+  htwo:
     image: buildo/h2database
     networks:
     - shop
     environment:
-    - driverClassName=org.h2.Driver
-    - username=adam
-    - password=adam123
+    - DRIVERCLASSNAME=org.h2.Driver
+    - URL=jdbc:h2:tcp://localhost/~/ecommerce
+    - USERNAME=adam
+    - PASSWORD=adam123
     volumes:
     - shop:/h2-data
 

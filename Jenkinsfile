@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('SCM-CHeckout'){
             steps{
-               sh 'git fetch https://github.com/arvind61h/Shopeasy.git main'
+               git 'https://github.com/arvind61h/Shopeasy.git' 
             }
         }
         stage('Test-And-DockerImage'){
@@ -29,7 +29,7 @@ pipeline{
         }
         stage('Deploy on Server'){
             steps{
-               sh 'docker-compose down'
+               sh 'docker-compose up -d'
             }
             
         }
