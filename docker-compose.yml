@@ -7,11 +7,10 @@ services:
     ports:
     - 8080:8080
     environment:
-    - DB.URL=jdbc:h2:tcp://htwo/~/ecommerce
-    - DB.USER=adam
-    - DB.PASSWORD=adam123
-    hostname:
-     htwo
+    - db.url=jdbc:h2:tcp://htwo/~/ecommerce
+    - db.user=sa
+    - db.password=''
+    - db.hostname=htwo
     depends_on:
     - htwo
   htwo:
@@ -19,10 +18,10 @@ services:
     networks:
     - shop
     environment:
-    - DRIVERCLASSNAME=org.h2.Driver
-    - URL=jdbc:h2:tcp://shop/~/ecommerce
-    - USERNAME=adam
-    - PASSWORD=adam123
+    - driverClassName=org.h2.Driver
+    - url=jdbc:h2:tcp://shop/~/ecommerce
+    - username=sa
+    - password=''
     volumes:
     - shop:/h2-data
 

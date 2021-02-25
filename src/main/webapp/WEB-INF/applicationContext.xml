@@ -14,8 +14,9 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.h2.Driver" />
 		<property name="url" value="jdbc:h2:tcp://localhost/~/ecommerce" />
-		<property name="username" value="adam" />
-		<property name="password" value="adam123" />
+		<property name="username" value="sa" />
+		<property name="password" value="" />
+		<property name="hostname" value="" />
 	</bean>
 
 	<bean id="sessionFactory"
