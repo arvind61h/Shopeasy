@@ -29,6 +29,7 @@ pipeline{
         }
         stage('Deploy on Server'){
             steps{
+                sh 'docker-compose down'
                sh 'docker-compose up -d'
             }
             
