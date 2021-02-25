@@ -29,7 +29,7 @@ pipeline{
         }
         stage('Deploy on Server'){
             steps{
-               sh 'docker-compose -up'
+               sh 'docker-compose up'
             }
             
         }
